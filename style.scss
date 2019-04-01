@@ -1,0 +1,134 @@
+h3, h4, p, span {
+  margin: 0;
+  padding: 0;
+}
+.myScore-box {
+  background-color: #666;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &--description {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+  &--percentage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin-top: 20px;
+  }
+}
+
+.lista {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    display: block;
+    clear: both;
+    background-color: #808080;
+    bottom: 35px;
+    border-radius: 10px;
+  }
+  .line-score {
+    position: absolute;
+    width: 1%;
+    height: 10px;
+    display: block;
+    clear: both;
+    background-image: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,0.9), rgba(255,255,255,1));
+    bottom: 35px;
+    left: 0px;
+    border-radius: 10px;
+    transition: width 2.5s linear;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      right: -5px;
+      top: -5px;
+    }
+  }
+}
+
+.item {
+  width: 33%;
+  .tiers {
+    padding: 0 0 30px 0;
+    text-align: center;
+    position: relative;
+    &:before {
+      content: '';
+      width: 1px;
+      height: 10px;
+      background-color: #fff;
+      position: absolute;
+      display: block;
+      bottom: 15px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    &:after {
+      content: '';
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      border-radius: 50%;
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translate(-50%);
+
+    }
+    &.silver {
+      &:after {
+        background-color: #ccc;
+      }
+      &.active {
+        &:after {
+          border: 3px solid #fff;
+        }
+      }
+    }
+    &.gold {
+      &:after {
+        background-color: pink;
+      }
+      &.active {
+        &:after {
+          border: 3px solid #fff;
+        }
+      }
+    }
+    &.platinum {
+      &:after {
+        background-color: #000;
+      }
+      &.active {
+        &:after {
+          border: 3px solid #fff;
+        }
+      }
+    }
+  }
+  .point {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
